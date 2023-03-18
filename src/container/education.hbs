@@ -4,35 +4,35 @@
 }}
 
 <div>
-  {{#with main}}
+{{#with main}}
     <main>
-      <section>
-		    {{> title data="My education" big=true}}
+    <section>
+        {{> title data="My education" big=true}}
         <ul>
-          {{#each educations}}
+        {{#each educations}}
             <li>
-              {{name}}, {{year}}
-              
-              {{#unless isEnd}}
-                  <em>*в процессі вивчення</em>
-              {{/unless}}
+            {{name}}, {{year}}
+            
+            {{#unless isEnd}}
+                <em>*в процессі вивчення</em>
+            {{/unless}}
             </li>
-          {{/each}}
+        {{/each}}
         </ul>
-      </section>
+    </section>
 
-      <section>
+    <section>
         {{> title data="My Certificates" big=false}}
         <ul>
-          {{#each certificates}}
+        {{#each certificates}}
             <li>
-              {{name}}, ID: ({{id}})
+            {{name}}, ID: ({{id}})
             </li>
-          {{/each}}
+        {{/each}}
         </ul>
-      </section>
+    </section>
     </main>
-  {{/with}}
+{{/with}}
 </div>
 
 {{!-- 
