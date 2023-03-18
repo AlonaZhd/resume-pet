@@ -1,0 +1,74 @@
+<main>
+    {{#with program}}
+        {{#with excursion}}
+            <section>
+                <div>
+                    <h1>Excursion "{{name}}"</h1>
+                </div>
+                <div>
+                    <address>{{location.city}}, {{location.country}}</address>
+                </div>
+                <div>
+                    {{date}}
+                </div>
+            </section>
+            <br /><hr>
+            <section>
+                <ol>
+                    {{#each program}}
+                    <li>
+                        {{> title data=name big=true}}
+                        <div>
+                            type: {{type}}
+                        </div>
+                        <div>
+                            duration: {{duration}} hours
+                        </div>
+                        {{#with details}}
+                        <div>  
+                            {{#with museum}}
+                                {{> title data=name}}
+                                <address>
+                                    {{#with location}}
+                                        {{address}}, {{city}}, {{country}}
+                                    {{/with}}
+                                </address>
+                                <br>
+                                <b>Exhibits</b>
+                                <br>    
+                                <ul>
+                                    {{#each exhibits}}
+                                        <li>
+                                            <cite>{{name}}</cite>
+                                            <br>
+                                            {{#if artist includeZero=true}}
+                                                {{artist}}<br>
+                                            {{/if}}
+                                            {{description}}
+                                            <br>
+                                            {{#if audio_guide}}
+                                                <em>*audio guide</em>
+                                            {{/if}}
+                                        </li>
+                                        <br>
+                                    {{/each}}
+                                </ul>
+                            {{/with}}                                                                           
+                        </div>
+                        <div>
+                            {{#with guide}}
+                                guide: {{name}}
+                                <br>
+                                language: {{language}}
+                                <br>
+                                rating: {{rating}}
+                            {{/with}}
+                        </div>
+                        {{/with}}
+                    </li>
+                    {{/each}}
+                </ol>
+            </section>
+        {{/with}}
+    {{/with}}   
+</main>
