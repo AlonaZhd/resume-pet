@@ -14,60 +14,66 @@
             </section>
             <br /><hr>
             <section>
-                <ol>
+                <div>
                     {{#each program}}
-                    <li>
-                        {{> title data=name big=true}}
-                        <div>
-                            type: {{type}}
-                        </div>
-                        <div>
-                            duration: {{duration}} hours
-                        </div>
+                        {{>program}}
                         {{#with details}}
-                        <div>  
-                            {{#with museum}}
-                                {{> title data=name}}
-                                <address>
-                                    {{#with location}}
-                                        {{address}}, {{city}}, {{country}}
-                                    {{/with}}
-                                </address>
-                                <br>
-                                <b>Exhibits</b>
-                                <br>    
-                                <ul>
-                                    {{#each exhibits}}
-                                        <li>
-                                            <cite>{{name}}</cite>
-                                            <br>
-                                            {{#if artist includeZero=true}}
-                                                {{artist}}<br>
-                                            {{/if}}
-                                            {{description}}
-                                            <br>
-                                            {{#if audio_guide}}
-                                                <em>*audio guide</em>
-                                            {{/if}}
-                                        </li>
-                                        <br>
-                                    {{/each}}
-                                </ul>
-                            {{/with}}                                                                           
-                        </div>
-                        <div>
-                            {{#with guide}}
-                                guide: {{name}}
-                                <br>
-                                language: {{language}}
-                                <br>
-                                rating: {{rating}}
-                            {{/with}}
-                        </div>
+                                {{#if museum}}
+                                    <section>
+                                        {{#with museum}}
+                                            {{> location}}
+                                            <b>Exhibits</b>
+                                            <br>    
+                                            <ul>
+                                                {{#each exhibits}}
+                                                    <li>
+                                                        <cite>{{name}}</cite>
+                                                        <br>
+                                                        {{#if artist includeZero=true}}
+                                                            {{artist}}<br>
+                                                        {{/if}}
+                                                        {{description}}
+                                                        <br>
+                                                        {{#if audio_guide}}
+                                                            <em>*audio guide</em>
+                                                        {{/if}}
+                                                    </li>
+                                                    <br>
+                                                {{/each}}
+                                            </ul>
+                                        {{/with}}
+                                    </section>
+                                {{/if}}
+                                
+                                {{#if venue}}
+                                    <section>
+                                        {{#with venue}}
+                                            {{> location}}
+                                        {{/with}}
+                                    </section>
+                                {{/if}}
+                                
+                                {{#if performers}}
+                                    <section>
+                                        <b>Performers</b>
+                                        <br>    
+                                        <ul>
+                                            {{#each performers}}
+                                                <li>
+                                                    <cite>{{name}}</cite>
+                                                    <br>
+                                                    {{type}}
+                                                </li>
+                                                <br>
+                                            {{/each}}
+                                        </ul>
+                                    </section>
+                                {{/if}}
+                                {{> guide}}
                         {{/with}}
-                    </li>
+                        <hr>
                     {{/each}}
-                </ol>
+                </div>
             </section>
         {{/with}}
     {{/with}}   
