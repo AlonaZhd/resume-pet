@@ -1,0 +1,113 @@
+
+<header>
+    <div>
+        {{> title data=name big=true}}
+    </div>
+    <div>
+        <b>{{description}}</b>
+    </div>
+    <br />
+    <div>
+        {{#with history}}
+            <em>{{year}}, {{founder}}</em>
+        {{/with}}
+    </div>
+    <br /><hr />
+</header>
+<main>
+    <section>
+        {{> title data='Types:'}}
+        <br>
+        {{#each types}}
+        <button type="button" class="btn btn-outline-secondary">{{this}}</button>
+        {{/each}}
+    </section>
+    <br/><hr/>
+        <section>
+        {{> title data='Syntax:'}}
+        {{#with syntax}}           
+        <ol class="list-group list-group-numbered list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Variables</div>
+                    {{#each variables}}
+                        {{this}},
+                    {{/each}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Functions</div>
+                    {{#each functions}}
+                        {{this}},
+                    {{/each}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Conditionals</div>
+                    {{#each conditionals}}
+                        {{this}},
+                    {{/each}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Loops</div>
+                    {{#each loops}}
+                        {{this}},
+                    {{/each}}
+                </div>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">Classes</div>
+                    {{#each classes}}
+                        {{this}},
+                    {{/each}}
+                </div>
+            </li>
+        </ol>
+        {{/with}}
+    </section>
+    <br/><hr/>
+    <section>
+        {{> title data='Features:'}}
+        <br>
+        {{#each features}}
+        <ul class="list-group list-group-flush">
+            <li class="list-group-item">{{this}}</li>
+        </ul>
+        {{/each}}
+    </section>
+    <br /><hr />
+    <section>
+        {{> title data='Libraries:'}}
+        <br>
+        {{#each libraries}}
+        <button type="button" class="btn btn-outline-secondary">{{this}}</button>
+        {{/each}}
+    </section>
+    <br /><hr />
+    <section>
+        {{> title data='Tools:'}}
+        <br>
+        {{#each tools}}
+        <button type="button" class="btn btn-outline-secondary">{{this}}</button>
+        {{/each}}
+    </section>
+    <br/><hr/>
+    <section>
+        {{> title data='Community:'}}
+        {{#each community}}           
+        <ol class="list-group list-group-numbered list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-start">
+                <div class="ms-2 me-auto">
+                <div class="fw-bold">{{name}}</div>
+                    {{type}}
+                </div>
+            </li>
+        </ol>
+        {{/each}}
+    </section>
+</main>
