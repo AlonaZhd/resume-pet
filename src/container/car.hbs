@@ -1,0 +1,246 @@
+<header>
+    <div>
+        <h1>{{make}} {{model}}</h1>
+    </div>
+    <div>
+        <h3>{{year}}</h3>
+    </div>
+    <div>
+        <h5>{{color}}</h5>
+    </div>
+    <br /><hr />
+</header>
+<main>
+    <section>
+        {{> title data='Features:'}}
+        <br>
+        {{#with features}}
+            <section>
+                <h4>Interior</h4>
+                <br>
+                {{#with interior}}
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-header bg-transparent border-secondary">seats</div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{#with seats}}
+                                            <ul>
+                                                <li>material: {{material}}</li>
+                                                <li>color: {{color}}</li>
+                                                <li>{{#if heated}}heated{{/if}}</li>
+                                                <li>{{#if ventilated}}ventilated{{/if}}</li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-header bg-transparent border-secondary">dashboard</div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{#with dashboard}}
+                                            <ul>
+                                                <li>material: {{material}}</li>
+                                                <li>color: {{color}}</li>
+                                                <li>display: 
+                                                    <ul>
+                                                        {{#with display}}
+                                                            <li>type: {{type}}</li>
+                                                            <li>size: {{size}}</li>
+                                                            <li>resolution: {{resolution}}</li>
+                                                            <li>{{#if touchscreen}}touchscreen{{/if}}</li>
+                                                        {{/with}}
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-header bg-transparent border-secondary">sunaudioroof</div>
+                                <div class="card-body">
+                                    <p class="card-text">
+                                        {{#with audio}}
+                                            <ul>
+                                                <li>system: {{system}}</li>
+                                                <li>speakers: {{speakers}}</li>
+                                                <li>{{#if subwoofer}}subwoofer{{/if}}</li>
+                                                <li>{{#if bluetooth}}bluetooth{{/if}}</li>
+                                                <li>{{#if USB}}USB{{/if}}</li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/with}}
+            </section>
+            <br>
+            <section>
+                <h4>Exterior</h4>
+                <br>
+                {{#with exterior}}
+                    <div class="row row-cols-1 row-cols-md-3 g-4">
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">wheels</h5>
+                                    <p class="card-text">
+                                        {{#with wheels}}
+                                            <ul>
+                                                <li>size: {{size}}</li>
+                                                <li>type: {{type}}</li>
+                                                <li>color: {{color}}</li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">headlights</h5>
+                                    <p class="card-text">
+                                        {{#with headlights}}
+                                            <ul>
+                                                <li>type: {{type}}</li>
+                                                <li>brightness: {{brightness}}</li>
+                                                <li>{{#if automatic}}automatic{{/if}}</li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col">
+                            <div class="card border-secondary mb-3" style="max-width: 18rem;">
+                                <div class="card-body">
+                                    <h5 class="card-title">sunroof</h5>
+                                    <p class="card-text">
+                                        {{#with sunroof}}
+                                            <ul>
+                                                <li>type: {{type}}</li>
+                                                <li>size: {{size}}</li>
+                                                <li>{{#if automatic}}automatic{{/if}}</li>
+                                            </ul>
+                                        {{/with}}
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {{/with}}
+            </section>
+            <br>
+            <section>
+                <h4>Safety</h4>
+                <br>
+                {{#with safety}}
+                    <h6>airbags:</h6>
+                    <ul class="list-group list-group-flush">
+                        {{#with airbags}}
+                            <li class="list-group-item">front: {{front}}</li>
+                            <li class="list-group-item">side: {{side}}</li>
+                            <li class="list-group-item">knee: {{knee}}</li>
+                            <li class="list-group-item">rear: {{rear}}</li>
+                        {{/with}}
+                    </ul>
+                    <br>
+                    <h6>assistance:</h6>
+                    {{#with assistance}}
+                        {{#if blind_spot_monitoring}}
+                            <button type="button" class="btn btn-outline-secondary">
+                                blind spot monitoring
+                            </button>
+                        {{/if}}
+                        {{#if rear_cross_traffic_alert}}
+                            <button type="button" class="btn btn-outline-secondary">
+                                rear cross traffic alert
+                            </button>
+                        {{/if}}
+                        {{#if lane_departure_warning}}
+                            <button type="button" class="btn btn-outline-secondary">
+                                lane departure warning
+                            </button>
+                        {{/if}}
+                        {{#if adaptive_cruise_control}}
+                            <button type="button" class="btn btn-outline-secondary">
+                                adaptive cruise control
+                            </button>
+                        {{/if}}
+                        {{#if collision_warning}}
+                            <button type="button" class="btn btn-outline-secondary">
+                                collision warning
+                            </button>
+                        {{/if}}
+                    {{/with}}
+                {{/with}}
+            </section>
+            <br>
+        {{/with}}
+    </section>
+    <br/><hr/>
+    <section>
+        {{> title data='Engine:'}}
+        <br>
+        {{#with engine}}           
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">type: {{type}}</h5>
+                <p class="card-text">displacement: {{displacement}}</p>
+                <p class="card-text">horsepower: {{horsepower}}</p>
+                <p class="card-text">torque: {{torque}}</p>
+            </div>
+                <ul class="list-group list-group-flush">
+                    {{#with transmission}}
+                    <li class="list-group-item">transmission: {{type}}</li>
+                    <li class="list-group-item">{{gears}} gears</li>
+                    {{/with}}
+                </ul>
+            </div>
+        {{/with}}
+    </section>
+    <br/><hr/>
+    <section>
+        {{> title data='Fuel economy:'}}
+        <ul class="list-group list-group-flush">
+            {{#with fuel_economy}}
+                <li class="list-group-item">city: {{city}}</li>
+                <li class="list-group-item">highway: {{highway}}</li>
+                <li class="list-group-item">combined: {{combined}}</li>
+            {{/with}}
+        </ul>  
+    </section>
+    <br/><hr/>
+    <section>
+        {{> title data='Price:'}}
+        <br>
+        {{#with price}}           
+            <div class="card" style="width: 18rem;">
+            <div class="card-body">
+                <h5 class="card-title">base: {{base}}</h5>
+                <em class="card-text">destination: {{destination}}</em>
+            </div>
+            <ul class="list-group list-group-flush">
+                {{#with options}}
+                <li class="list-group-item">navigation: {{navigation}}</li>
+                <li class="list-group-item">moonroof: {{moonroof}}</li>
+                <li class="list-group-item">premium paint: {{premium_paint}}</li>
+                {{/with}}
+            </ul>
+            <div class="card-body">
+                <h5 class="card-text">total: {{total}}</h5>
+            </div>
+            </div>
+        {{/with}}
+    </section>
+</main>
