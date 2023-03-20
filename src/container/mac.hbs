@@ -1,0 +1,152 @@
+<header>
+    <div>
+        {{> title data=name big=true}}
+    </div>
+    <div>
+        <b>{{description}}</b>
+    </div>
+    <br />
+    <div>
+        price: ${{price}}
+        <br>
+        category: {{category}}
+    </div>
+    <br /><hr />
+</header>
+<main>
+    <section>
+        {{#with features}}
+            <ol class="list-group list-group-flush list-group-numbered">
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">processor:</div>
+                        {{#with processor}}
+                            <ul>
+                                <li>brand: {{brand}}</li>
+                                <li>model: {{model}}</li>
+                                <li>speed: {{speed}}</li>
+                                <li>cores: {{cores}}</li>
+                                <li>cache: {{cache}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">memory:</div>
+                        {{#with memory}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>size: {{size}}</li>
+                                <li>speed: {{speed}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">storage:</div>
+                        {{#with storage}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>size: {{size}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">display:</div>
+                        {{#with display}}
+                            <ul>
+                                <li>size: {{size}}</li>
+                                <li>resolution: {{resolution}}</li>
+                                <li>technology: {{technology}}</li>
+                                <li>color_space: {{color_space}}</li>
+                                <li>brightness: {{brightness}}</li>
+                                <li>refresh_rate: {{refresh_rate}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">graphics:</div>
+                        {{#with graphics}}
+                            <ul>
+                                <li>brand: {{brand}}</li>
+                                <li>model: {{model}}</li>
+                                <li>memory: {{memory}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">ports:</div>
+                        {{#each ports}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>count: {{count}}</li>
+                                {{#if features}}
+                                    <li>features: 
+                                        {{#each features}}
+                                            {{this}},
+                                        {{/each}}
+                                    </li>
+                                {{/if}}
+                            </ul>
+                            <br>
+                        {{/each}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">battery:</div>
+                        {{#with battery}}
+                            <ul>
+                                <li>type: {{type}}</li>
+                                <li>capacity: {{capacity}}</li>
+                                <li>life: {{life}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">weight: {{weight}}</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">dimensions:</div>
+                        {{#with dimensions}}
+                            <ul>
+                                <li>height: {{height}}</li>
+                                <li>width: {{width}}</li>
+                                <li>depth: {{depth}}</li>
+                            </ul>
+                        {{/with}}
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">operating_system: {{operating_system}}</div>
+                    </div>
+                </li>
+                <li class="list-group-item d-flex justify-content-between align-items-start">
+                    <div class="ms-2 me-auto">
+                        <div class="fw-bold">accessories:</div>
+                        {{#each accessories}}
+                            <ul>
+                                <li>name: {{name}}</li>
+                                <li>price: ${{price}}</li>
+                            </ul>
+                            <br>
+                        {{/each}}
+                    </div>
+                </li>
+            </ol>
+        {{/with}}
+    </section>
+</main>
