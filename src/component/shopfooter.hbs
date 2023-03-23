@@ -1,0 +1,19 @@
+<footer>
+    <section class="py-5">
+            <div class="row g4">
+                {{#each footer}}
+                    <div class="col-2">
+                        <div class="card border-light">
+                            {{#each this}}
+                                <a href="{{this.link}}" class="m-2 text-decoration-none
+                                {{#if @last}}
+                                    nav-link disabled                                 
+                                {{/if}}
+                                ">{{this.text}}</a>
+                            {{/each}}
+                        </div>
+                    </div>
+                {{/each}}
+            </div>
+    </section>
+</footer>

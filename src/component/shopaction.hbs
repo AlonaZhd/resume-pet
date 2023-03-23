@@ -1,0 +1,17 @@
+<section class="py-5">
+    {{#with service}}
+        <div class="row">
+            <div class="col">
+                <div class="card">
+                    <div class="card-body text-bg-success text-center">
+                            <h2>{{title}}</h2>
+                            <p>{{description}}</p>
+                            {{#each buttons}}
+                                {{> btn-prim}}
+                            {{/each}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    {{/with}}
+</section>
