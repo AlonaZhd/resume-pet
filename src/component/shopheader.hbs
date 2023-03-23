@@ -1,0 +1,20 @@
+<header>
+    {{#with navigation}}
+        <div class='row'>
+        <div class='col'>
+            <div class='card'>
+            <div class='card-body d-flex justify-content-between'>
+                <h1>{{Logo}}</h1>
+                <div class='nav d-flex align-items-center'>
+                {{#each links}}
+                    <div class='nav-item'>
+                        <a class='nav-link {{#if @last}}disabled{{/if}}' href='{{href}}'>{{text}}</a>
+                    </div>
+                {{/each}}
+                </div>
+            </div>
+            </div>
+        </div>
+        </div>
+    {{/with}}
+</header>
