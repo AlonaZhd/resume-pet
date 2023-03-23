@@ -1,0 +1,32 @@
+<main>
+    {{> breadcrumb}}
+    <section class="pb-5">
+        {{#with newsData}}
+            <div class="card mb-3">
+                <img src="{{photo}}" class="card-img-top" alt="NewsDada">
+                <div class="card-body">
+                    {{#with head}}
+                        <h1 class="card-title">{{heading}}</h1>
+                        <p class="card-text">{{description}}</p>
+                    {{/with}}
+                    <div class="my-5">
+                        {{#each body}}
+                            <h4 class="card-title mt-4">{{title}}</h4>
+                            <p class="card-text">{{text}}</p>
+                        {{/each}}
+                    </div>
+                </div>
+            </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section class="py-5">
+        {{#with newsOtherBlock}}
+            <h2 class="text-center mb-4">{{title}}</h2>
+            {{> shoppost}}
+        {{/with}}
+    </section>
+    <hr>
+    {{> shopaction}}
+    <hr>
+</main>
