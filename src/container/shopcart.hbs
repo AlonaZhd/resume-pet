@@ -1,0 +1,63 @@
+<main>
+    {{#with header}}
+        <div class='my-5 d-flex justify-content-between'>
+        <h1>{{title}}</h1>
+        <div class='d-flex align-items-center'>
+            {{#with button}}
+            <button
+                type='button'
+                class='btn py-2 px-3 me-2 btn-outline-secondary'
+            >{{text}}</button>
+            {{/with}}
+        </div>
+        </div>
+    {{/with}}
+    <hr />
+    <section class='my-5'>
+        {{#each goodsBlock}}
+            {{> cartGoodsItem}}
+        {{/each}}
+    </section>
+    <hr>
+    <section class="py-5">
+        {{#with total}}
+            <div class="row">
+                <div class="col-8">
+                    <h3>{{title}}</h3>
+                    <h2>{{amount}}</h2>
+                    <p>{{delivery}}</p>
+                </div>
+                <div class="col-4">
+                    {{#each buttons}}
+                        {{#if isSuccess}}
+                            <div class='my-3'>
+                                <button
+                                type='button'
+                                class='btn btn-success mx-2'
+                                >{{text}}</button>
+                            </div>
+                        {{/if}}
+                        {{#if isOutline}}
+                            <div class='my-3'>
+                                <button
+                                type='button'
+                                class='btn btn-outline-success mx-2'
+                                >{{text}}</button>
+                            </div>
+                        {{/if}}
+                    {{/each}}
+                </div>
+            </div>
+        {{/with}}
+    </section>
+    <hr>
+    <section class="py-5">
+        {{#with goodsOtherBlock}}
+            <h2 class="text-center mb-3">{{title}}</h2>
+            {{> shopcard}}
+        {{/with}}
+    </section>
+    <hr>
+    {{> subscribe}}
+    <hr>
+</main>
