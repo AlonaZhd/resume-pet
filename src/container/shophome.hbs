@@ -19,27 +19,7 @@
         {{/with}}
     </section>
     <hr>    
-    <section class="py-5">
-        {{#with subscribe}}
-            <div class="row">
-                <div class="col">
-                    <div class="card">
-                        <div class="card-body text-bg-dark d-flex justify-content-between">
-                            <div>
-                                <h2>{{header}}</h2>
-                                <p>{{description}}</p>
-                            </div>
-                            <div class=" d-flex align-items-center">
-                                {{#each buttons}}
-                                    <span class="mx-1">{{> btn-prim}}</span>
-                                {{/each}}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        {{/with}}
-    </section>
+    {{> subscribe}}
     <hr>    
     {{> shopaction}}
     <hr>    
