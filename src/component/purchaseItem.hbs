@@ -1,0 +1,42 @@
+<div class='my-3'>
+  <div class='row d-flex align-items-center'>
+    {{#with this}}
+      <div class='col-4'>
+        <div class='card-body'>
+          <h5 class='card-title'>{{number}}</h5>
+          <p class='card-text'>{{status}}</p>
+        </div>
+      </div>
+      <div class='col-2'>
+        {{#with amount}}
+          <div class='card-body'>
+            <h5 class='card-text'>{{title}}</h5>
+            <p class='card-title'>{{value}}</p>
+          </div>
+        {{/with}}
+      </div>
+
+      <div class='col-4 d-flex'>
+        {{#each images}}
+          <img class='p-2' src='{{this}}' alt='...' />
+        {{/each}}
+      </div>
+
+      <div class='col-2 d-flex justify-content-end'>
+        {{#with button}}
+          {{#if isPrimary}}
+            <div class='my-3'>
+              <a
+                class='btn btn-primary'
+                href='{{link}}'
+                role='button'
+              >{{text}}</a>
+            </div>
+          {{/if}}
+
+        {{/with}}
+      </div>
+    {{/with}}
+    <hr />
+  </div>
+</div>
