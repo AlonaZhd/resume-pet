@@ -1,0 +1,85 @@
+<main>
+    {{> breadcrumb}}
+    <section class="py-6">
+        <h1>{{header}}</h1>
+        <div class="row my-4">
+            {{#each sortBlock}}
+                {{#with this}}
+                    <div class="col-3">
+                        {{> formSelect}}
+                    </div>
+                {{/with}}
+            {{/each}}
+        </div>
+        <aside class="row">
+            <div class="col-4">
+                <div class="card">
+                    <div class="card-body">
+                        {{#with filterBlock}}
+                            <section>
+                                {{#with sellers}}
+                                    <div>{{title}}</div>
+                                        {{#each list}}
+                                            {{> formCheck}}
+                                        {{/each}}
+                                {{/with}}
+                            </section>
+                            <hr>
+                            <section>
+                                {{#with brands}}
+                                    <div class="my-2">{{title}}</div>
+                                    <input type='text' class='form-control' placeholder='{{input.placeholder}}'/>
+                                        {{#each options}}
+                                            {{> formCheck}}
+                                        {{/each}}
+                                {{/with}}
+                            </section>
+                            <hr>
+                            <section>
+                                {{#with price}}
+                                    <div class="my-2">{{title}}</div>
+                                    <div class="row g-2">
+                                        <div class="col-5">
+                                            <input type='text' class='form-control' placeholder='{{range.from}}'/>
+                                        </div>
+                                        <div class="col-5">
+                                            <input type='text' class='form-control' placeholder='{{range.to}}'/>
+                                        </div>
+                                        <div class="col-2">
+                                            {{#with button}}
+                                                <a href='{{href}}' class='btn btn-outline-secondary'>{{text}}</a>
+                                            {{/with}}
+                                        </div>
+                                    </div>
+                                {{/with}}
+                            </section>
+                            <hr>
+                            <section>
+                                {{#each filterList}}
+                                    <div>{{title}}</div>
+                                        {{#each options}}
+                                            {{> formCheck}}
+                                        {{/each}}
+                                    {{#unless @last}}<hr>{{/unless}}
+                                {{/each}}
+                            </section>
+                        {{/with}}
+                    </div>
+                </div>
+            </div>
+            <div class="col-8">
+                <div class="row gy-3">
+                    {{#each goodsList}}
+                        <div class="col-6">
+                            {{#with this}}
+                                {{> catalogItem}}
+                            {{/with}}
+                        </div>
+                    {{/each}}
+                </div>
+            </div>
+        </aside>
+    </section>
+    {{> shopaction}}
+    <hr>
+</main>
