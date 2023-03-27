@@ -20,7 +20,7 @@ var header = {
 var footer = {
   social: {
     email: {
-      text: 'alona@mail.com',
+      text: 'alona@gmail.com',
       href: 'mailto:alona@mail.com',
     },
     phone: {
@@ -38,19 +38,27 @@ var navigation = {
   links: [
     {
       text: 'Home',
-      href: 'https://github.com/',
+      href: '/shophome',
     },
     {
-      text: 'Contacts',
-      href: 'https://www.google.com/',
+      text: 'Cart',
+      href: '/shopcart',
     },
     {
-      text: 'Help',
-      href: 'https://www.youtube.com/',
+      text: 'Order',
+      href: '/shoporder',
+    },
+    {
+      text: 'Profile',
+      href: '/shopprofile',
+    },
+    {
+      text: 'News',
+      href: '/shopnews',
     },
     {
       text: 'Disable',
-      href: 'https://www.google.com/',
+      href: null,
     },
   ],
   Logo: 'Logo',
@@ -60,93 +68,101 @@ var footerLink = [
   [
     {
       text: 'Home',
-      link: 'https://www.youtube.com/',
+      href: 'https://www.youtube.com/',
     },
     {
       text: 'Trending',
-      link: 'https://www.youtube.com/feed/trending',
+      href: 'https://www.youtube.com/feed/trending',
     },
     {
       text: 'Subscriptions',
-      link: 'https://www.youtube.com/feed/subscriptions',
+      href: 'https://www.youtube.com/feed/subscriptions',
     },
     {
       text: 'Library',
-      link: 'https://www.youtube.com/feed/library',
+      href: 'https://www.youtube.com/feed/library',
     },
   ],
   [
     {
       text: 'History',
-      link: 'https://www.youtube.com/feed/history',
+      href: 'https://www.youtube.com/feed/history',
     },
     {
       text: 'Your Videos',
-      link: 'https://www.youtube.com/feed/my_videos',
+      href: 'https://www.youtube.com/feed/my_videos',
     },
     {
       text: 'Live',
-      link: 'https://www.youtube.com/live',
+      href: 'https://www.youtube.com/live',
     },
     {
       text: 'Settings',
-      link: 'https://www.youtube.com/account',
+      href: 'https://www.youtube.com/account',
     },
   ],
   [
     {
       text: 'Watch Later',
-      link: 'https://www.youtube.com/playlist?list=WL',
+      href: 'https://www.youtube.com/playlist?list=WL',
     },
     {
       text: 'Liked Videos',
-      link: 'https://www.youtube.com/playlist?list=LL',
+      href: 'https://www.youtube.com/playlist?list=LL',
     },
     {
       text: 'Music',
-      link: 'https://www.youtube.com/music',
+      href: 'https://www.youtube.com/music',
     },
     {
       text: 'Gaming',
-      link: 'https://www.youtube.com/gaming',
+      href: 'https://www.youtube.com/gaming',
     },
   ],
   [
     {
       text: 'Sports',
-      link: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
+      href: 'https://www.youtube.com/channel/UCo_q6aOlvPH7M-j_XGWVgXg',
     },
     {
       text: 'News',
-      link: 'https://www.youtube.com/news',
+      href: 'https://www.youtube.com/news',
     },
     {
       text: 'Fashion & Beauty',
-      link: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
+      href: 'https://www.youtube.com/channel/UC1x8rV_f-2yPpzlN0JWZXIQ',
     },
     {
       text: 'Learning',
-      link: 'https://www.youtube.com/learning',
+      href: 'https://www.youtube.com/learning',
     },
   ],
   [
     {
       text: 'Report History',
-      link: 'https://www.youtube.com/feed/history/report_history',
+      href: 'https://www.youtube.com/feed/history/report_history',
     },
     {
       text: 'Help',
-      link: 'https://support.google.com/youtube/?hl=en',
+      href: 'https://support.google.com/youtube/?hl=en',
     },
     {
       text: 'Send Feedback',
-      link: 'https://support.google.com/youtube/answer/4347644?hl=en',
+      href: 'https://support.google.com/youtube/answer/4347644?hl=en',
     },
     {
       text: 'About',
-      link: 'https://www.youtube.com/about/',
+      href: 'https://www.youtube.com/about/',
     },
   ],
+]
+
+var breadcrumb = [
+  { name: 'Home', url: '/shophome' },
+  { name: 'Catalog', url: '/shopcatalog' },
+  { name: 'Product', url: '/shopproduct' },
+  { name: 'Review', url: '/shopreview' },
+  { name: 'Product PC Asus 331 BC 671', url: null },
 ]
 
 // ================================================================
@@ -1308,7 +1324,7 @@ router.get('/task31', function (req, res) {
         'We offer innovative solutions to help grow your business. Our team of experts is committed to providing tailored strategies that deliver the best results.',
       button: {
         text: 'Learn More',
-        link: 'https://www.youtube.com/',
+        href: 'https://www.youtube.com/',
       },
     },
     city: {
@@ -1500,29 +1516,29 @@ router.get('/task31', function (req, res) {
       socialMedia: [
         {
           name: 'Facebook',
-          link: 'https://www.facebook.com/',
+          href: 'https://www.facebook.com/',
         },
         {
           name: 'Twitter',
-          link: 'https://twitter.com/',
+          href: 'https://twitter.com/',
         },
         {
           name: 'Instagram',
-          link: 'https://www.instagram.com/',
+          href: 'https://www.instagram.com/',
         },
       ],
       partners: [
         {
           name: 'Acme Inc.',
-          link: 'https://www.acme.com/',
+          href: 'https://www.acme.com/',
         },
         {
           name: 'Globex Corporation',
-          link: 'https://www.globex.com/',
+          href: 'https://www.globex.com/',
         },
         {
           name: 'Stark Industries',
-          link: 'https://www.starkindustries.com/',
+          href: 'https://www.starkindustries.com/',
         },
       ],
     },
@@ -1742,12 +1758,7 @@ router.get('/shopproduct', function (req, res) {
 
     navigation,
 
-    breadcrumb: [
-      { name: 'Home', url: 'https://github.com/' },
-      { name: 'PC', url: 'https://www.google.com/' },
-      { name: 'Windows', url: 'https://github.com/' },
-      { name: 'Product PC #3123', url: null },
-    ],
+    breadcrumb,
 
     productData: {
       img: 'https://picsum.photos/400/200',
@@ -1766,10 +1777,10 @@ router.get('/shopproduct', function (req, res) {
       },
 
       actionList: [
-        { name: 'Buy', isWarning: true },
-        { name: 'Add to cart', isError: true },
-        { name: 'Share', isSuccess: true },
-        { name: 'Like', isGood: true },
+        { text: 'Buy', isWarning: true },
+        { text: 'Add to cart', isError: true },
+        { text: 'Share', isSuccess: true },
+        { text: 'Like', isGood: true },
       ],
 
       item: {
@@ -1861,12 +1872,7 @@ router.get('/shopnews', function (req, res) {
 
     navigation,
 
-    breadcrumb: [
-      { name: 'Home', url: 'https://github.com/' },
-      { name: 'News', url: 'https://www.google.com/' },
-      { name: 'Today', url: 'https://github.com/' },
-      { name: 'About cats', url: null },
-    ],
+    breadcrumb,
 
     newsData: {
       photo: 'https://picsum.photos/1000/300',
@@ -1944,7 +1950,7 @@ router.get('/shopnews', function (req, res) {
       buttons: [
         {
           text: 'Show More',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
       ],
     },
@@ -1981,7 +1987,7 @@ router.get('/shoporder', function (req, res) {
       buttons: [
         {
           text: 'Я новий покупець',
-          isPrimary: true,
+          isWarning: true,
         },
         {
           text: 'Я постійний покупець',
@@ -2246,7 +2252,7 @@ router.get('/shopcart', function (req, res) {
       title: 'Кошик',
       button: {
         text: 'Продовжити покупки',
-        link: 'https://www.youtube.com/',
+        href: 'https://www.youtube.com/',
       },
     },
 
@@ -2311,12 +2317,12 @@ router.get('/shopcart', function (req, res) {
       buttons: [
         {
           text: 'Оформити замовлення',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
           isSuccess: true,
         },
         {
           text: 'Офрмити кредит',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
           isOutline: true,
         },
       ],
@@ -2359,11 +2365,11 @@ router.get('/shopcart', function (req, res) {
       buttons: [
         {
           text: 'Register Now',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
         {
           text: 'Buy Subscription',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
       ],
     },
@@ -2404,17 +2410,17 @@ router.get('/shopprofile', function (req, res) {
         buttons: [
           {
             text: 'Знайти',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isSuccess: true,
           },
           {
             text: 'Виділити все',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isOutline: true,
           },
           {
             text: 'Очистити все',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isDanger: true,
           },
         ],
@@ -2427,7 +2433,7 @@ router.get('/shopprofile', function (req, res) {
           images: ['https://picsum.photos/110/100'],
           button: {
             text: 'Детальніше',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
         },
@@ -2442,7 +2448,7 @@ router.get('/shopprofile', function (req, res) {
           ],
           button: {
             text: 'Детальніше',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
         },
@@ -2456,7 +2462,7 @@ router.get('/shopprofile', function (req, res) {
           ],
           button: {
             text: 'Детальніше',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
         },
@@ -2498,17 +2504,17 @@ router.get('/shopprofile', function (req, res) {
       buttons: [
         {
           text: 'Редагувати',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
           isPrimary: true,
         },
         {
           text: 'Очистити',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
           isSecondary: true,
         },
         {
           text: 'Видалити',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
           isDanger: true,
         },
       ],
@@ -2520,7 +2526,7 @@ router.get('/shopprofile', function (req, res) {
             phone: '+38 (098) 222 22 22',
             button: {
               text: 'Редагувати',
-              link: 'https://www.youtube.com/',
+              href: 'https://www.youtube.com/',
             },
           },
           {
@@ -2528,7 +2534,7 @@ router.get('/shopprofile', function (req, res) {
             phone: '+38 (098) 111 11 11',
             button: {
               text: 'Редагувати',
-              link: 'https://www.youtube.com/',
+              href: 'https://www.youtube.com/',
             },
           },
         ],
@@ -2552,17 +2558,17 @@ router.get('/shopprofile', function (req, res) {
         buttons: [
           {
             text: 'Редагувати',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
           {
             text: 'Очистити',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isSecondary: true,
           },
           {
             text: 'Видалити',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isDanger: true,
           },
         ],
@@ -2611,7 +2617,7 @@ router.get('/shopreview', function (req, res) {
           placeholder: 'Залиште відгук про товар',
           button: {
             text: 'Написати відгук',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
         },
       },
@@ -2622,17 +2628,17 @@ router.get('/shopreview', function (req, res) {
           {
             text: 'Додати відгук',
             isWarning: true,
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
           {
             text: 'Позитивні відгуки',
             isSuccess: true,
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
           {
             text: 'Негативні відгуки',
             isDanger: true,
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
         ],
       },
@@ -2645,12 +2651,12 @@ router.get('/shopreview', function (req, res) {
           {
             text: 'Купити',
             isPrimary: true,
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
           {
             text: 'Купити в кредит',
             isSecondary: true,
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
           },
         ],
         seller: {
@@ -2757,7 +2763,7 @@ router.get('/shopreview', function (req, res) {
       buttons: [
         {
           text: 'Show More',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
       ],
     },
@@ -2787,14 +2793,8 @@ router.get('/shopcatalog', function (req, res) {
       },
     },
 
-    breadcrumb: [
-      { name: 'Головна', url: 'https://github.com/' },
-      {
-        name: "Комп'ютери та ноутбуки",
-        url: 'https://www.google.com/',
-      },
-      { name: 'Ноутбуки', url: null },
-    ],
+    breadcrumb,
+
     header: 'Ноутбуки',
     sortBlock: [
       {
@@ -2851,7 +2851,7 @@ router.get('/shopcatalog', function (req, res) {
         },
         button: {
           text: 'OK',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
       },
 
@@ -2950,12 +2950,12 @@ router.get('/shopcatalog', function (req, res) {
         buttons: [
           {
             text: 'Купити зараз',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
           {
             text: 'Купити в кредит',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isSecondary: true,
           },
         ],
@@ -2983,12 +2983,12 @@ router.get('/shopcatalog', function (req, res) {
         buttons: [
           {
             text: 'Купити зараз',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
           {
             text: 'Купити в кредит',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isSecondary: true,
           },
         ],
@@ -3016,12 +3016,12 @@ router.get('/shopcatalog', function (req, res) {
         buttons: [
           {
             text: 'Купити зараз',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isPrimary: true,
           },
           {
             text: 'Купити в кредит',
-            link: 'https://www.youtube.com/',
+            href: 'https://www.youtube.com/',
             isSecondary: true,
           },
         ],
@@ -3043,7 +3043,7 @@ router.get('/shopcatalog', function (req, res) {
       buttons: [
         {
           text: 'Show More',
-          link: 'https://www.youtube.com/',
+          href: 'https://www.youtube.com/',
         },
       ],
     },

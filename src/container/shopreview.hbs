@@ -27,7 +27,7 @@
                                         <div>{{placeholder}}</div>
                                         {{#with button}}
                                             <div>
-                                                <a class='btn py-2 px-3 btn-success mx-2' href='{{link}}' role='button'>{{text}}</a>
+                                                {{> btnSuccess}}
                                             </div>
                                         {{/with}}
                                     </div>
@@ -46,18 +46,18 @@
                             <div class="d-flex flex-row">
                                 {{#each buttons}}
                                     {{#if isWarning}}
-                                        <div>
-                                            <a class='btn py-2 px-3 btn-warning text-light me-3' href='{{link}}' role='button'>{{text}}</a>
+                                        <div class="me-3">
+                                            {{> btnWarning}}
                                         </div>
                                     {{/if}}
                                     {{#if isSuccess}}
-                                        <div>
-                                            <a class='btn py-2 px-3 btn-success me-3' href='{{link}}' role='button'>{{text}}</a>
+                                        <div class="me-3">
+                                            {{> btnSuccess}}
                                         </div>
                                     {{/if}}
                                     {{#if isDanger}}
-                                        <div>
-                                            <a class='btn py-2 px-3 btn-danger me-3' href='{{link}}' role='button'>{{text}}</a>
+                                        <div class="me-3">
+                                            {{> btnDanger}}
                                         </div>
                                     {{/if}}
                                 {{/each}}
@@ -82,13 +82,13 @@
                             <p>{{value}}</p>
                             {{#each buttons}}
                                 {{#if isPrimary}}
-                                    <div>
-                                        <a class='btn py-2 px-3 btn-primary me-3 my-2' href='{{link}}' role='button'>{{text}}</a>
+                                    <div class="my-2">
+                                        {{> btnPrimary}}
                                     </div>
                                 {{/if}}
                                 {{#if isSecondary}}
-                                    <div>
-                                        <a class='btn py-2 px-3 btn-secondary me-3 my-2' href='{{link}}' role='button'>{{text}}</a>
+                                    <div class="my-2">
+                                        {{> btnSecondary}}
                                     </div>
                                 {{/if}}
                             {{/each}}

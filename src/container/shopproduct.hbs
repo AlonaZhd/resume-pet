@@ -84,7 +84,7 @@
                         {{#each actionList}}
                             {{#if isWarning}}
                                 <div>
-                                    <button type="button" class="btn btn-warning text-light mx-2">{{name}}</button>
+                                    {{> btnWarning}}
                                 </div>
                             {{/if}}
                             {{#if isError}}
@@ -93,8 +93,8 @@
                                 </div>
                             {{/if}}
                             {{#if isSuccess}}
-                                <div>
-                                    <button type="button" class="btn btn-success mx-2">{{name}}</button>
+                                <div class="me-2">
+                                    {{> btnSuccess}}
                                 </div>
                             {{/if}}
                             {{#if isGood}}
