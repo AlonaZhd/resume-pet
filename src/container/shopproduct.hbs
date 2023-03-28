@@ -83,13 +83,13 @@
                     <div class="card p-2 d-flex flex-row justify-content-start">
                         {{#each actionList}}
                             {{#if isWarning}}
-                                <div>
+                                <div class="me-2">
                                     {{> btnWarning}}
                                 </div>
                             {{/if}}
                             {{#if isError}}
-                                <div>
-                                    <button type="button" class="btn btn-outline-danger mx-2">{{name}}</button>
+                                <div class="me-2">
+                                    {{> btnOutlineDanger}}
                                 </div>
                             {{/if}}
                             {{#if isSuccess}}
@@ -98,8 +98,8 @@
                                 </div>
                             {{/if}}
                             {{#if isGood}}
-                                <div>
-                                    <button type="button" class="btn btn-outline-primary mx-2">{{name}}</button>
+                                <div class="me-2">
+                                    {{> btnOutlinePrimary}}
                                 </div>
                             {{/if}}
                         {{/each}}

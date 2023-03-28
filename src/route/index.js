@@ -174,7 +174,52 @@ router.get('/', function (req, res) {
   // res.render генерує нам HTML сторінку
 
   //            ↙ cюди вводимо назву файлу з сontainer
-  res.render('index', {})
+  res.render('index', {
+    layout: 'basic',
+
+    page: {
+      title: {
+        text: 'Головна сторінка',
+      },
+    },
+
+    header,
+
+    shopProject: [
+      {
+        text: 'shophome',
+        href: '/shophome',
+      },
+      {
+        text: 'shopcatalog',
+        href: '/shopcatalog',
+      },
+      {
+        text: 'shopproduct',
+        href: '/shopproduct',
+      },
+      {
+        text: 'shopreview',
+        href: '/shopreview',
+      },
+      {
+        text: 'shopcart',
+        href: '/shopcart',
+      },
+      {
+        text: 'shoporder',
+        href: '/shoporder',
+      },
+      {
+        text: 'shopprofile',
+        href: '/shopprofile',
+      },
+      {
+        text: 'shopnews',
+        href: 'shopnews/',
+      },
+    ],
+  })
   //                  ↑↑ сюди вводимо JSON дані
 })
 

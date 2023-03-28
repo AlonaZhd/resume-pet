@@ -1,11 +1,91 @@
 {{! 
-Це код container файлу для index сторінки, 
-в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
- }}
+    Це код container файлу для index сторінки, 
+    в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/"
+    }}
 
-<h1>Hello world</h1>
+<header>
+  {{#with header}}
+    <div class='row d-flex justify-content-center'>
+      <div class='col-6'>
+        <div class='card-body text-center'>
+          <h1>{{name.firstname}} {{name.lastname}}</h1>
+          <div class="p-2 mt-2 bg-secondary-subtle text-emphasis-secondary">
+            <h3 class="text-body-secondary">Resume project</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  {{/with}}
+</header>
 
+<main>
+  <article>
+    <div class='row my-3'>
+      <div class='col-6 mt-5'>
+        <div class='border-end border-3 border-secondary'>
+          <div class='card-body p-3 text-end h-100'>
+            <h5 class='card-title mb-2'>Вітаю!</h5>
+            <p class='card-text mb-5'>З радістю представляю вам,
+              свій перший проект - розробка сторінок для
+              резюме та інтернет-магазину.</p>
+            <p class='card-text mb-5'>Мій проект розроблений за
+              допомогою найсучасніших технологій, таких як
+              HTML, шаблонізатор Handlebars і бібліотека
+              Bootstrap. Цей проект був моїм першим кроком у
+              світ програмування, і я дуже рада, що він
+              вийшов настільки цікавим.</p>
+            <p class='card-text'>Якщо ви хочете стати full
+              stack розробником, відчуйте впевненість та
+              почніть розробляти свій перший проект - хто
+              знає, можливо, це саме те чого ви шукаєте!</p>
+          </div>
+        </div>
+      </div>
+      <div class='col-6 mt-5'>
+        <div class='card border border-0 text-center mb-4'>
+          <div class='card-header'>
+            <h5 class='card-title'>Shop Project</h5>
+          </div>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col'>
+                <div class='d-flex flex-wrap justify-content-center'>
+                    {{#each shopProject}}
+                        <div class="m-2">
+                            {{> btnSecondary}}
+                        </div>
+                    {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class='card border border-0 text-center'>
+          <div class='card-header'>
+            <h5 class='card-title'>Resume Project</h5>
+          </div>
+          <div class='card-body'>
+            <div class='row'>
+              <div class='col'>
+                <div class='d-flex flex-wrap justify-content-center'>
+                    {{#each shopProject}}
+                        <div class="m-2">
+                            {{> btnSecondary}}
+                        </div>
+                    {{/each}}
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+      </div>
+    </div>
+  
+  </article>
+</main>
 {{! 
-    Цей код містить лише те, що буде виводитись в <body>
-    Адже наш layout/default.hbs має вже структуру HTML
-}}
+        Цей код містить лише те, що буде виводитись в <body>
+        Адже наш layout/default.hbs має вже структуру HTML
+    }}
