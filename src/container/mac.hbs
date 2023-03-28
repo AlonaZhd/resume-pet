@@ -5,13 +5,12 @@
     <div>
         <b>{{description}}</b>
     </div>
-    <br />
+    
     <div>
-        price: ${{price}}
-        <br>
-        category: {{category}}
+       <p>price: ${{price}}</p>
+        <p>category: {{category}}</p>
     </div>
-    <br /><hr />
+    <hr />
 </header>
 <main>
     <section>
@@ -85,7 +84,7 @@
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">ports:</div>
                         {{#each ports}}
-                            <ul>
+                            <ul class="mb-3">
                                 <li>type: {{type}}</li>
                                 <li>count: {{count}}</li>
                                 {{#if features}}
@@ -96,7 +95,6 @@
                                     </li>
                                 {{/if}}
                             </ul>
-                            <br>
                         {{/each}}
                     </div>
                 </li>
@@ -138,11 +136,10 @@
                     <div class="ms-2 me-auto">
                         <div class="fw-bold">accessories:</div>
                         {{#each accessories}}
-                            <ul>
+                            <ul class="mb-3">
                                 <li>name: {{name}}</li>
                                 <li>price: ${{price}}</li>
                             </ul>
-                            <br>
                         {{/each}}
                     </div>
                 </li>

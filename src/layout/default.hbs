@@ -16,33 +16,32 @@
 </head>
 
 <body>
-	{{#with header}}
-	<header>
-		<div>
-			<h1>{{name.firstname}} {{name.lastname}}</h1>
-		</div>
-		<div>
-			<b>{{position}}</b>
-		</div>
-		<br />
-		<div>
-			<em>{{salary}}</em>
-		</div>
-		<br />
-		<div>
-			<address>{{address}}</address>
-		</div>
-		<br />
-		<hr />
-	</header>
-	{{/with}}
+	<div class="p-5">
+		{{#with header}}
+			<header>
+				<div>
+					<h1>{{name.firstname}} {{name.lastname}}</h1>
+				</div>
+				<div class="mb-2">
+					<b>{{position}}</b>
+				</div>
+				<div>
+					<em>{{salary}}</em>
+				</div>
+				<div>
+					<address>{{address}}</address>
+				</div>
+				<hr />
+			</header>
+		{{/with}}
 
-	{{> nav }}
+		{{> nav }}
 
-	{{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
-	{{{body}}}
+		{{!  ↓  ця кострукція показує куди шаблонізатору треба вставляти код з container файлу   }}
+		{{{body}}}
 
-	{{> footer}}
+		{{> footer}}
+	</div>
 	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 

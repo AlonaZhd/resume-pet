@@ -6,11 +6,9 @@
                     <div>
                         <em>version: {{version}}</em>
                     </div>
-                    <br>
-                    <div>
+                    <div class="mt-3">
                         {{description}}
                     </div>
-                    <br>
                     {{#if elements}}
                         <ul>
                             {{> title data='Elements:'}}
@@ -18,21 +16,15 @@
                             {{#each elements}}
                                 <li>
                                     {{> itemlist}}
-                                    <br>
-                                        <ul>
-                                            <div>attributes:</div>
-                                            <br>
-                                            {{#each attributes}}
-                                                <li>
-                                                    <strong>{{name}}</strong>
-                                                    <br />
-                                                    {{description}}
-                                                    <br />
-                                                    <br>
-                                                </li>
-                                            {{/each}}
-                                        </ul>
-                                    <br>
+                                    <ul>
+                                        <div class="mt-3">attributes:</div>
+                                        {{#each attributes}}
+                                            <li>
+                                                <strong>{{name}}</strong>
+                                                <p>{{description}}</p>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
                                 </li>
                             {{/each}}
                         </ul>
@@ -43,21 +35,15 @@
                             {{#each properties}}
                                 <li>
                                     {{> itemlist}}
-                                    <br>
-                                        <ul>
-                                            <div>values:</div>
-                                            <br>
-                                            {{#each values}}
-                                                <li>
-                                                    <strong>{{value}}</strong>
-                                                    <br />
-                                                    {{description}}
-                                                    <br />
-                                                    <br>
-                                                </li>
-                                            {{/each}}
-                                        </ul>
-                                    <br>
+                                    <ul>
+                                        <div class="mt-3">values:</div>
+                                        {{#each values}}
+                                            <li>
+                                                <strong>{{value}}</strong>
+                                                <p>{{description}}</p>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
                                 </li>
                             {{/each}}
                         </ul>
@@ -68,28 +54,20 @@
                             {{#each functions}}
                                 <li>
                                     {{> itemlist}}
-                                    <br>
-                                        <ul>
-                                            <div>parameters:</div>
-                                            <br>
-                                            {{#each parameters}}
-                                                <li>
-                                                    <strong>{{name}}</strong>
-                                                    <br />
-                                                    type: {{type}}
-                                                    <br />
-                                                    {{description}}
-                                                    <br />
-                                                    <br>
-                                                </li>
-                                            {{/each}}
-                                        </ul>
-                                    <br>
+                                    <ul>
+                                        <div class="mt-3">parameters:</div>
+                                        {{#each parameters}}
+                                            <li>
+                                                <strong>{{name}}</strong>
+                                                <p>type: {{type}}</p>
+                                                <p>{{description}}</p>
+                                            </li>
+                                        {{/each}}
+                                    </ul>
                                 </li>
                             {{/each}}
                         </ul>
                     {{/if}}
-                <hr>
             </section>
         {{/each}}
     {{/with}}

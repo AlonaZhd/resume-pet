@@ -1,21 +1,20 @@
 {{#with footer}}
-<footer>
-    <div>
-        {{#with social}}
-            {{> link text=email.text href=email.href}}
-            {{> link text=phone.text href=phone.href}}
-            {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
-        {{/with}}            
-    </div>
-    <br>
-    {{#with ../header}}
-    <div>
-        <em>© 2023 by {{name.firstname}} {{name.lastname}}</em>
-    </div>
-    <br>
-    <div>
-        <address>{{address}}</address>
-    </div>
-    {{/with}}
-</footer>
+    <footer>
+        <hr>
+        <div>
+            {{#with social}}
+                {{> link text=email.text href=email.href}}
+                {{> link text=phone.text href=phone.href}}
+                {{> link text=linkedin.text href=linkedin.href blank=true noLine=true }}
+            {{/with}}            
+        </div>
+        {{#with ../header}}
+        <div>
+            <em>© 2023 by {{name.firstname}} {{name.lastname}}</em>
+        </div>
+        <div>
+            <address>{{address}}</address>
+        </div>
+        {{/with}}
+    </footer>
 {{/with}}

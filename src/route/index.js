@@ -216,7 +216,72 @@ router.get('/', function (req, res) {
       },
       {
         text: 'shopnews',
-        href: 'shopnews/',
+        href: '/shopnews',
+      },
+    ],
+
+    resumeProject: [
+      {
+        text: 'skills',
+        href: '/skills',
+      },
+      {
+        text: 'summary',
+        href: '/summary',
+      },
+      {
+        text: 'education',
+        href: '/education',
+      },
+      {
+        text: 'work',
+        href: '/work',
+      },
+    ],
+
+    testProject: [
+      {
+        text: 'person',
+        href: '/person',
+      },
+      {
+        text: 'biography',
+        href: '/bio',
+      },
+      {
+        text: 'program',
+        href: '/program',
+      },
+      {
+        text: 'web',
+        href: '/web',
+      },
+    ],
+
+    bootstrapProject: [
+      {
+        text: 'js',
+        href: '/js',
+      },
+      {
+        text: 'car',
+        href: '/car',
+      },
+      {
+        text: 'macbook',
+        href: '/mac',
+      },
+      {
+        text: 'task21',
+        href: '/task21',
+      },
+      {
+        text: 'task22',
+        href: '/task22',
+      },
+      {
+        text: 'task31',
+        href: '/task31',
       },
     ],
   })
@@ -361,7 +426,7 @@ router.get('/education', function (req, res) {
         },
         {
           name: 'Seven',
-          year: 2022 - 2023,
+          year: '2022 - 2023',
         },
         {
           name: 'WayUp',
