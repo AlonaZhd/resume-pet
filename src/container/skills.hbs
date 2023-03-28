@@ -3,40 +3,38 @@
 в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
 }}
 
-<div>
+<main>
     {{#with main}}
-        <main>
-            <section>
-                {{> title data="All skills" big=true}}
-                <ul>
-                    {{#each skills}}
-                        <li>
-                            {{name}} 
+        <section>
+            {{> title data="All skills" big=true}}
+            <ul>
+                {{#each skills}}
+                    <li>
+                        {{name}} 
+                        {{#if point includeZero=true}}
+                            ({{point}})
+                        {{/if}}
+
+                        {{#if isTop}}
+                            <em>*top</em>
+                        {{/if}}
+
+                        {{#unless point includeZero=true}}
+                            <em>*не вивчаємо</em>
+                        {{/unless}}
+
+                        {{#unless point}}
                             {{#if point includeZero=true}}
-                                ({{point}})
+                                <em>*в процессі вивчення</em>
                             {{/if}}
-
-                            {{#if isTop}}
-                                <em>*top</em>
-                            {{/if}}
-
-                            {{#unless point includeZero=true}}
-                                <em>*не вивчаємо</em>
-                            {{/unless}}
-
-                            {{#unless point}}
-                                {{#if point includeZero=true}}
-                                    <em>*в процессі вивчення</em>
-                                {{/if}}
-                            {{/unless}}
-                        </li>
-                    {{/each}}
-                </ul>
-            </section>
-            
-            <section>
-                {{> title data="My Hobbies" big=false}}
-                <ol>
+                        {{/unless}}
+                    </li>
+                {{/each}}
+            </ul>
+        </section>
+        <section>
+            {{> title data="My Hobbies" big=false}}
+            <ol>
                 {{#each hobbies}}
                     <li>
                         {{name}} 
@@ -45,11 +43,10 @@
                         {{/if}}
                     </li>
                 {{/each}}
-                </ol>
-            </section>
-        </main>
+            </ol>
+        </section>
     {{/with}}
-</div>
+</main>
 
 {{!-- 
     Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs

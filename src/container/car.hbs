@@ -8,16 +8,16 @@
     <div>
         <h5>{{color}}</h5>
     </div>
-    <br /><hr />
+    <hr />
 </header>
 <main>
     <section>
         {{> title data='Features:'}}
-        <br>
+        
         {{#with features}}
             <section>
                 <h4>Interior</h4>
-                <br>
+                
                 {{#with interior}}
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
@@ -83,10 +83,10 @@
                     </div>
                 {{/with}}
             </section>
-            <br>
+            
             <section>
                 <h4>Exterior</h4>
-                <br>
+                
                 {{#with exterior}}
                     <div class="row row-cols-1 row-cols-md-3 g-4">
                         <div class="col">
@@ -140,10 +140,10 @@
                     </div>
                 {{/with}}
             </section>
-            <br>
+            
             <section>
                 <h4>Safety</h4>
-                <br>
+                
                 {{#with safety}}
                     <h6>airbags:</h6>
                     <ul class="list-group list-group-flush">
@@ -154,7 +154,7 @@
                             <li class="list-group-item">rear: {{rear}}</li>
                         {{/with}}
                     </ul>
-                    <br>
+                    
                     <h6>assistance:</h6>
                     {{#with assistance}}
                         {{#if blind_spot_monitoring}}
@@ -185,13 +185,13 @@
                     {{/with}}
                 {{/with}}
             </section>
-            <br>
+            
         {{/with}}
     </section>
     <br/><hr/>
     <section>
         {{> title data='Engine:'}}
-        <br>
+        
         {{#with engine}}           
             <div class="card" style="width: 18rem;">
             <div class="card-body">
@@ -223,7 +223,7 @@
     <br/><hr/>
     <section>
         {{> title data='Price:'}}
-        <br>
+        
         {{#with price}}           
             <div class="card" style="width: 18rem;">
             <div class="card-body">

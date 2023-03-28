@@ -11,8 +11,8 @@
                 <div>
                     {{date}}
                 </div>
-            </section>
-            <br /><hr>
+            </section class="mb-3">
+            <hr>
             <section>
                 <div>
                     {{#each program}}
@@ -23,22 +23,21 @@
                                         {{#with museum}}
                                             {{> location}}
                                             <b>Exhibits</b>
-                                            <br>    
                                             <ul>
                                                 {{#each exhibits}}
                                                     <li>
                                                         <cite>{{name}}</cite>
-                                                        <br>
-                                                        {{#if artist includeZero=true}}
-                                                            {{artist}}<br>
-                                                        {{/if}}
-                                                        {{description}}
-                                                        <br>
-                                                        {{#if audio_guide}}
-                                                            <em>*audio guide</em>
-                                                        {{/if}}
+                                                        <p>
+                                                            {{#if artist includeZero=true}}
+                                                                {{artist}}
+                                                            {{/if}}
+                                                            {{description}}
+                                                            
+                                                            {{#if audio_guide}}
+                                                                <em>*audio guide</em>
+                                                            {{/if}}
+                                                        </p>
                                                     </li>
-                                                    <br>
                                                 {{/each}}
                                             </ul>
                                         {{/with}}
@@ -56,22 +55,18 @@
                                 {{#if performers}}
                                     <section>
                                         <b>Performers</b>
-                                        <br>    
                                         <ul>
                                             {{#each performers}}
                                                 <li>
                                                     <cite>{{name}}</cite>
-                                                    <br>
-                                                    {{type}}
+                                                    <p>{{type}}</p>
                                                 </li>
-                                                <br>
                                             {{/each}}
                                         </ul>
                                     </section>
                                 {{/if}}
                                 {{> guide}}
                         {{/with}}
-                        <hr>
                     {{/each}}
                 </div>
             </section>

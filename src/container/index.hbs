@@ -69,7 +69,23 @@
             <div class='row'>
               <div class='col'>
                 <div class='d-flex flex-wrap justify-content-center'>
-                    {{#each shopProject}}
+                    {{#each resumeProject}}
+                        <div class="m-2">
+                            {{> btnSecondary}}
+                        </div>
+                    {{/each}}
+                </div>
+                <hr>
+                <div class='d-flex flex-wrap justify-content-center'>
+                    {{#each testProject}}
+                        <div class="m-2">
+                            {{> btnSecondary}}
+                        </div>
+                    {{/each}}
+                </div>
+                <hr>
+                <div class='d-flex flex-wrap justify-content-center'>
+                    {{#each bootstrapProject}}
                         <div class="m-2">
                             {{> btnSecondary}}
                         </div>
